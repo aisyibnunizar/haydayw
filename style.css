@@ -1,0 +1,53 @@
+[v-cloak] {
+  display: none;
+}
+body {
+  overflow-x: hidden;
+  transition: background-color 0.3s ease;
+}
+.particle {
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 9999;
+  width: 14px;
+  height: 14px;
+  background: #d4af37;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #e5c158;
+}
+.blur-gradient {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(212, 175, 55, 0.1) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+}
+
+/* Vue Transitions */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.slide-enter-from,
+.slide-leave-to {
+  transform: translateX(100%);
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
